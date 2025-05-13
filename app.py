@@ -187,7 +187,7 @@ def delay():
     selected_flight = data[data['flight'] == int(flight_id)].iloc[0]
     
     # Fetch weather data using city name
-    api_key = '5e9f4cb05bc73d1d5dc5f9ff51667a6b'
+    api_key = 'Your_API_Key'
     weather_forecast = fetch_weather_forecast(api_key, city_map[arrival], date)
     if weather_forecast:
         forecast_at_1500 = filter_forecast_at_1500(weather_forecast)
