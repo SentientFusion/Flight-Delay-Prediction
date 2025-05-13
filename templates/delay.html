@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Delay Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="centered-container">
+        <h1>Flight Delay Prediction</h1>
+        <div class="output-box">
+            <p>The flight is <strong>{{ delay_status }}</strong>.</p>
+            {% if delay_status == "Delayed" %}
+            <p>Predicted delay time: <strong>{{ predicted_delay_time }} minutes</strong>.</p>
+            {% endif %}
+            <a href="{{ url_for('index') }}">Back to Flight Booking</a>
+        </div>
+    </div>
+</body>
+</html>

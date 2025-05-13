@@ -1,0 +1,3 @@
+id,YEAR,MONTH,DAY,dep_time,sched_dep_time,dep_delay,arr_time,sched_arr_time,arr_delay,carrier,flight,origin,dest,air_time,distance,name,flight_status,delay_minutes,taxi_time,WindGustSpeed,Humidity,Pressure,Rain,Weather_Condition,Temp
+6775,2020,3,16,1733,1655,38,2042,2035,7,VX,413,JFK,LAX,345,2475,Virgin America,Delayed,7,13,28.0,41.0,1011.7,No,Partly Cloudy,18.5
+127174,2022,2,11,811,815,-4,1150,1207,-17,DL,1079,JFK,PHX,312,2153,Delta Air Lines Inc.,Not Delayed,-17,22,39.0,61.0,1022.2,No,Partly Cloudy,17.0

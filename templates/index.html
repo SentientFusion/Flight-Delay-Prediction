@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Booking</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Book Your Flight</h1>
+    <form action="{{ url_for('flights') }}" method="post">
+        <label for="departure">Departure Airport:</label>
+        <select id="departure" name="departure">
+            {% for airport in departure_airports %}
+            <option value="{{ airport }}">{{ airport }}</option>
+            {% endfor %}
+        </select>
+        <label for="arrival">Arrival Airport:</label>
+        <select id="arrival" name="arrival">
+            {% for airport in arrival_airports %}
+            <option value="{{ airport }}">{{ airport }}</option>
+            {% endfor %}
+        </select>
+        <label for="date">Date:</label>
+        <select id="date" name="date">
+            {% for date in dates %}
+            <option value="{{ date }}">{{ date }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Check Available Flights</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Flights</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Available Flights from {{ departure }} to {{ arrival }} on {{ date }}</h1>
+    <ul>
+        {% for flight in flights %}
+        <li>
+            <span>{{ flight['flight'] }} - {{ flight['name'] }} - {{ '{:02d}:{:02d}'.format(flight['dep_time'] // 100, flight['dep_time'] % 100) }}</span>
+            <form action="{{ url_for('delay') }}" method="post">
+                <input type="hidden" name="flight_id" value="{{ flight['flight'] }}">
+                <input type="hidden" name="departure" value="{{ departure }}">
+                <input type="hidden" name="arrival" value="{{ arrival }}">
+                <input type="hidden" name="date" value="{{ date }}">
+                <button type="submit">Select</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
